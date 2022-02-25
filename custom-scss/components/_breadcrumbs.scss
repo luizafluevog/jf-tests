@@ -1,0 +1,67 @@
+// #region Options
+$fontSize: 12px;
+$fontColor: $black;
+$textAlignment: left;
+$shouldUnderlineLinks: false;
+
+$hasCustomSeperator: true;
+$customSeperatorCharacter: ">";
+
+//// Active Link
+$activeLinkColor: $black;
+$activeLinkFontWeight: normal;
+$shouldActiveLinkUnderline: false;
+// #endregion Options
+
+// #region Main Styling
+[aria-label="Breadcrumb"] {
+    @include media_down($sm) {
+        display: none;
+    }
+
+    padding: 0;
+
+    margin-top: 20px;
+    @extend .container;
+
+    .breadcrumbs {
+        text-align: $textAlignment;
+    }
+
+    .breadcrumb {
+        &.is-active {
+            a {
+                font-weight: $activeLinkFontWeight;
+
+                @if $shouldActiveLinkUnderline == true {
+                    text-decoration: underline;
+                } @else {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        a {
+            @if $shouldUnderlineLinks == true {
+                text-decoration: underline;
+            } @else {
+                text-decoration: none;
+            }
+
+            span {
+                color: $fontColor;
+                font-size: $fontSize;
+                font-family: $SansSerif;
+            }
+        }
+
+        @if $hasCustomSeperator == true {
+            &:not(:first-child):before {
+                border: unset;
+                content: $customSeperatorCharacter;
+                transform: unset;
+                font-size: 14px;
+            }
+        }
+    }
+}

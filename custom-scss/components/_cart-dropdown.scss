@@ -1,0 +1,50 @@
+#cart-preview-dropdown {
+    left: 0 !important;
+    top: 45px !important;
+
+    .or-use-label {
+        text-align: center;
+    }
+
+    .previewCartList {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .previewCartItem {
+        display: flex;
+        align-items: center;
+    }
+
+    .previewCartItem-name {
+        font-size: 14px;
+    }
+
+    .previewCartItem-price {
+        color: $black;
+    }
+
+    .previewCartItem-content {
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .previewCartAction-checkout {
+        padding-left: 0;
+    }
+
+    .previewCartAction-viewCart {
+        padding-right: 0;
+    }
+
+    .previewCart-additionalCheckoutButtons,
+    .or-use-label {
+        margin-top: 0;
+    }
+
+    .GooglePayCheckout.RemoteCheckout {
+        margin-top: 0;
+    }
+}

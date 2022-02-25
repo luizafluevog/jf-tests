@@ -1,0 +1,13 @@
+
+
+// Script to get the FAQ from their website
+// $(".faq-accordion").addClass("panel-group").removeClass("faq-accordion");
+// $(".pane").addClass("panel-data").removeClass("pane");
+
+// $("h5").each((index, elem) => {
+// $(elem).replaceWith($(`<div class="panel-title">` + elem.innerHTML + '</div>'));
+// });
+
+// $(".panel-title").each(function(index) {
+//     $(this).next(".panel-data").andSelf().wrapAll("<div class='panel' />")
+// });

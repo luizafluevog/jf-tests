@@ -1,0 +1,170 @@
+.button {
+  transition: 0.2s background;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 2px solid transparent;
+  outline: 0;
+  cursor: pointer;
+  font-family: $SansSerif;
+  line-height: normal;
+  color: black;
+
+  &:focus,
+  &:hover,
+  &:active {
+    border: 2px solid transparent;
+  }
+
+  &.button-medium {
+    min-width: 180px;
+    padding: 10px 15px;
+    font-size: 14px;
+    letter-spacing: normal;
+
+    @include media_down($md) {
+      min-width: 160px;
+      font-size: 14px;
+      letter-spacing: normal;
+    }
+
+    @include media_down($sm) {
+      min-width: 160px;
+      font-size: 10px;
+      letter-spacing: 0.4px;
+      padding: 7px 15px;
+    }
+  }
+
+  &.button-small {
+    font-size: 10px;
+    min-width: 50px;
+    padding: 7px 12px;
+  }
+
+  &.button-white {
+    background: white;
+    color: black;
+
+    &:hover {
+      background: #eaeaea;
+    }
+
+    &:active {
+      background: #d4d4d4;
+    }
+  }
+
+  &.button-black {
+    background: $black;
+    color: white;
+
+    &:hover {
+      background: transparentize($black, 0.2);
+    }
+
+    &:active {
+      background: transparentize($black, 0.4);
+    }
+  }
+
+  &.button-border-white {
+    background: transparent;
+    color: white;
+    border-color: white;
+
+    &:hover {
+      background: transparentize(white, 0.8);
+    }
+
+    &:active {
+      background: transparentize(white, 0.6);
+    }
+  }
+
+  &.button-border-black {
+    background: transparent;
+    color: black;
+    border-color: black;
+
+    &:hover {
+      background: black;
+      color: white;
+    }
+
+    &:active {
+      background: transparentize(black, 0.2);
+      color: white;
+    }
+  }
+}
+
+// BC Overrides
+.button--primary {
+  @extend .button-black;
+}
+
+.button--small {
+  @extend .button-small;
+}
+
+.button--action {
+  @extend .button-border-black;
+}
+
+.gpay-button.black.short.en {
+  padding: 12px 10px;
+  min-width: unset;
+  width: 100px;
+  height: 39px;
+  min-height: unset;
+  border-radius: 1px;
+}
+
+.facebook-login {
+  padding: 4px 0;
+  background: $fbBackground;
+  border-radius: 3px;
+  display: flex;
+  max-width: 80%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 17px auto;
+  text-decoration: none;
+
+  &:hover {
+    background: transparentize($fbBackground, 0.1);
+  }
+
+  &:active {
+    background: transparentize($fbBackground, 0.1);
+  }
+
+  .icon {
+    width: 30px;
+    margin: auto;
+    text-align: center;
+
+    svg {
+      width: 16px;
+      fill: white;
+      height: unset;
+    }
+  }
+
+  p {
+    padding: 0 14px;
+    border-left: 1px solid $fbBorderColor;
+    line-height: 35px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    width: 90%;
+    text-align: center;
+  }
+}
+
+.form-actions input.button {
+  width: auto;
+}

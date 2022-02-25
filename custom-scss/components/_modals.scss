@@ -1,0 +1,29 @@
+.modal {
+    .modal-header-title {
+        text-transform: uppercase;
+    }
+
+    .g-recaptcha {
+        > div {
+            margin: 20px 0;
+        }
+    }
+}
+
+#infoModal {
+    min-height: 80px;
+
+    .modal-content{
+        padding-bottom: 10px;
+
+        .custom-modal-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 0;
+        }
+
+        .modal-body {
+            text-align: center;
+        }
+    }
+}

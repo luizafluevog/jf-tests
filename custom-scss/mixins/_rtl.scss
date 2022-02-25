@@ -1,0 +1,243 @@
+@mixin text-align($direction) {
+  @if $direction == "left" {
+    body:not([dir="rtl"]) & {
+      text-align: left;
+    }
+
+    body[dir="rtl"] & {
+      text-align: right;
+    }
+  } @else if $direction == "right" {
+    body:not([dir="rtl"]) & {
+      text-align: right;
+    }
+
+    [dir="rtl"] & {
+      text-align: left;
+    }
+  } @else {
+    text-align: $direction;
+  }
+}
+
+@mixin text-align-left {
+  body:not([dir="rtl"]) & {
+    text-align: left;
+  }
+
+  body[dir="rtl"] & {
+    text-align: right;
+  }
+}
+
+@mixin text-align-right {
+  body:not([dir="rtl"]) & {
+    text-align: right !important;
+  }
+
+  body[dir="rtl"] & {
+    text-align: left !important;
+  }
+}
+
+@mixin text-align-center {
+  text-align: center !important;
+}
+
+@mixin background-position($x, $y) {
+  // values have to be in px
+  body:not([dir="rtl"]) & {
+    background-position: #{$x} #{$y};
+  }
+
+  body[dir="rtl"] & {
+    background-position: calc(100% - #{$x}) #{$y};
+  }
+}
+
+@mixin background-position-start($x) {
+  // values have to be in px
+  body:not([dir="rtl"]) & {
+    background-position-x: #{$x};
+  }
+
+  body[dir="rtl"] & {
+    background-position-x: calc(100% - #{$x});
+  }
+}
+
+@mixin background-position-end($x) {
+  // values have to be in px
+  body:not([dir="rtl"]) & {
+    background-position-x: calc(100% - #{$x});
+  }
+
+  body[dir="rtl"] & {
+    background-position-x: #{$x};
+  }
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+  body:not([dir="rtl"]) & {
+    margin: $top $right $bottom $left;
+  }
+  body[dir="rtl"] & {
+    margin: $top $left $bottom $right;
+  }
+}
+
+@mixin margin-start($value) {
+  body:not([dir="rtl"]) & {
+    margin-left: $value;
+  }
+
+  body[dir="rtl"] & {
+    margin-right: $value;
+  }
+}
+
+@mixin margin-end($value) {
+  body:not([dir="rtl"]) & {
+    margin-right: $value;
+  }
+
+  body[dir="rtl"] & {
+    margin-left: $value;
+  }
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+  body:not([dir="rtl"]) & {
+    padding: $top $right $bottom $left;
+  }
+
+  body[dir="rtl"] & {
+    padding: $top $left $bottom $right;
+  }
+}
+
+@mixin padding-start($value) {
+  body:not([dir="rtl"]) & {
+    padding-left: $value;
+  }
+
+  body[dir="rtl"] & {
+    padding-right: $value;
+  }
+}
+
+@mixin padding-end($value) {
+  body:not([dir="rtl"]) & {
+    padding-right: $value;
+  }
+
+  body[dir="rtl"] & {
+    padding-left: $value;
+  }
+}
+
+@mixin left($value) {
+  body:not([dir="rtl"]) & {
+    left: $value;
+  }
+
+  body[dir="rtl"] & {
+    right: $value;
+  }
+}
+
+@mixin right($value) {
+  body:not([dir="rtl"]) & {
+    right: $value;
+  }
+
+  body[dir="rtl"] & {
+    left: $value;
+  }
+}
+
+@mixin float-left {
+  body:not([dir="rtl"]) & {
+    float: left;
+  }
+
+  body[dir="rtl"] & {
+    float: right;
+  }
+}
+
+@mixin float-right {
+  body:not([dir="rtl"]) & {
+    float: right;
+  }
+
+  body[dir="rtl"] & {
+    float: left;
+  }
+}
+
+@mixin left($value) {
+  body:not([dir="rtl"]) & {
+    left: $value;
+  }
+
+  body[dir="rtl"] & {
+    right: $value;
+  }
+}
+
+@mixin transform($func, $value) {
+  body:not([dir="rtl"]) & {
+    transform: #{$func }(unquote("(") #{$value} unquote(")"));
+
+    body[dir="rtl"] & {
+      transform: #{$func }(unquote("(") (-1 * $value) unquote(")"));
+    }
+  }
+}
+
+@mixin custom($property, $ltr-value, $rtl-value) {
+  body:not([dir="rtl"]) & {
+    #{$property}: $ltr-value;
+  }
+
+  body[dir="rtl"] & {
+    #{$property}: $rtl-value;
+  }
+}
+
+@mixin border-left($value) {
+  body:not([dir="rtl"]) & {
+    border-left: $value;
+  }
+
+  body[dir="rtl"] & {
+    border-right: $value;
+  }
+}
+
+@mixin border-right($value) {
+  body:not([dir="rtl"]) & {
+    border-right: $value;
+  }
+
+  body[dir="rtl"] & {
+    border-left: $value;
+  }
+}
+
+@mixin border-radius($topLeft, $topRight, $bottomRight, $bottomLeft) {
+  body:not([dir="rtl"]) & {
+    border-top-left-radius: $topLeft;
+    border-top-right-radius: $topRight;
+    border-bottom-right-radius: $bottomRight;
+    border-bottom-left-radius: $bottomLeft;
+  }
+
+  body[dir="rtl"] & {
+    border-top-left-radius: $topRight;
+    border-top-right-radius: $topLeft;
+    border-bottom-right-radius: $bottomRight;
+    border-bottom-left-radius: $bottomLeft;
+  }
+}

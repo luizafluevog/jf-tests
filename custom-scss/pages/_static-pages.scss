@@ -1,0 +1,144 @@
+.static-page {
+    .entry-content > h6 {
+        text-transform: uppercase;
+        font-weight: normal;
+        @extend .small;
+        line-height: 1.6;
+    }
+
+    &.faq {
+        h4 {
+            @extend .small;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 14px;
+        }
+    
+        .panel-title {
+            padding-right: 25px;
+        }
+
+        .anchor-titles-group-mobile {
+            margin-bottom: 20px;
+
+            @include media_up($md) {
+                display: none;
+            }
+        }
+    }
+
+    .entry-content {
+        padding-top: 2rem;
+        border-top: 1px solid $mediumGrey;
+
+        h4 {
+            margin: 14px 0;
+            letter-spacing: initial;
+            font-size: 14px;
+            line-height: 25px;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-family: $AvenirBold;
+        }
+
+        .columns {
+            @extend .row;
+        }
+
+        .column {
+            @extend .small-12;
+            @extend .medium-6;
+            margin-top: -14px;
+        }
+
+        ul {
+            margin-left: 1.15rem;
+        }
+
+        li,
+        p {
+            margin: 14px 0;
+            font-family: $AvenirMed;
+            line-height: 20px;
+            strong {
+                font-family: $AvenirBold;
+            }
+        }
+    }
+
+    .entry-content table {
+        width: 100%;
+        margin: 20px 0;
+        text-align: left;
+    }
+
+    &.shipping-delivery {
+        .entry-content {
+            table:not(:first-of-type) {
+                margin-top: 80px;
+                @include media_down($sm) {
+                    margin-top: 30px;
+                }
+            }
+
+            .confirmation-emails {
+                margin-top: 80px;
+                @include media_down($sm) {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+
+    .entry-content table th {
+        height: 35px;
+        background: #f9f9f9;
+        border-top: 1px solid #b9b9b9;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-family: $AvenirBold;
+    }
+
+    .entry-content table td {
+        height: 40px;
+        background: #e9e9e9;
+        font-family: $AvenirMed;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .entry-content table td,
+    .entry-content table th {
+        padding: 0 9px;
+        border-bottom: 1px solid #b9b9b9;
+    }
+
+    p {
+        margin-top: 0;
+        margin: 14px 0;
+    }
+
+    strong small {
+        margin: 0 0 10px;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-family: $AvenirBold;
+    }
+    h4.panel-group-anchor {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-family: $AvenirBold;
+        line-height: 20px;
+    }
+    .panel-group {
+        .panel-title {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            font-family: $AvenirMed;
+        }
+    }
+}

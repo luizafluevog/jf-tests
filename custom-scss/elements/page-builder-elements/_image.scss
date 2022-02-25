@@ -1,0 +1,7 @@
+.element.image {
+    @include media_down($lg) {
+    }
+
+    @include media_down($sm) {
+    }
+}

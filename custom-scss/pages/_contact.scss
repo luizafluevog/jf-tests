@@ -1,0 +1,131 @@
+#contact-us-page {
+    .contact {
+        margin-top: 40px;
+    }
+
+    .page-heading {
+        border-bottom: 1px solid $mediumGrey;
+        padding-bottom: 12px;
+        margin-bottom: 22px;
+    }
+
+    .contact-form-wrapper {
+        .form-field {
+            margin-bottom: 20px;
+        }
+
+        .recapcha-form-field {
+            margin-bottom: 0;
+            @include media_down($sm) {
+                text-align: center;
+            }
+        }
+
+        .form-label {
+            display: inline-block;
+            &::after {
+                content: "*";
+                margin-left: 3px;
+                color: $red;
+            }
+        }
+
+        .form-input {
+            border-color: $mediumGrey;
+        }
+
+        .form-label {
+            @extend .small;
+            color: $black;
+            margin-bottom: 5px;
+
+            small {
+                display: inline;
+                float: none;
+                color: $red;
+                font-size: 14px;
+            }
+        }
+
+        @include media_up($md) {
+            .g-recaptcha > div {
+                margin-right: auto;
+                margin-left: unset;
+            }
+        }
+
+        .form-actions {
+            text-align: left;
+            margin-top: 10px;
+
+            @include media_down($sm) {
+                text-align: center;
+            }
+        }
+
+        .contact-us-disclaimer {
+            color: $darkerGrey;
+            font-style: italic;
+            margin-top: 20px;
+            margin-bottom: 70px;
+            display: block;
+        }
+
+        small {
+            margin-bottom: 20px;
+            display: block;
+        }
+    }
+
+    .form-wrapper {
+        position: relative;
+
+        .form-loader {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: white;
+            align-items: center;
+            justify-content: center;
+            width: calc(100% + 40px);
+
+            @include media_down($sm) {
+                width: 100%;
+            }
+        }
+    }
+
+    .contact-content {
+        border-bottom: 1px solid $mediumGrey;
+        margin-bottom: 25px;
+        padding-bottom: 5px;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .submit-note {
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
+
+@include media_down($md) {
+    #contact-us-page {
+        #contact_question {
+            min-height: 115px;
+        }
+
+        .contact-us-heading {
+            display: none;
+        }
+
+        .contact {
+            margin-top: 15px;
+        }
+    }
+}

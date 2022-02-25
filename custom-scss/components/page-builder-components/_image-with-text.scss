@@ -1,0 +1,183 @@
+.image-with-text {
+  // #region Options
+  // Section - General
+  $sectionMinHeight: 520px;
+  $sectionTitleFontSizeLG: 60px;
+  $sectionTitleFontSizeMD: 40px;
+  $sectionTitleFontSizeSM: 20px;
+
+  // Content - General
+  $contentPaddingLG: 80px 125px;
+  $contentPaddingMD: 40px 70px;
+  $contentPaddingSM: 20px 15px 30px;
+  $contentMaxWidth: 480px;
+  $contentBackgroundColor: $lightGrey;
+  $topContentAlignmentSM: center;
+  $bottomContentAlignmentSM: center;
+
+  // Title
+  $titleFontSizeLG: 60px;
+  $titleFontSizeMD: 40px;
+  $titleFontSizeSM: 20px;
+  $titleMarginBottomLG: 35px;
+  $titleMarginBottomMD: 20px;
+  $titleMarginBottomSM: 10px;
+
+  // Paragraph
+
+  // Button
+  $buttonTopMarginLG: 70px;
+  $buttonTopMarginMD: 20px;
+  $buttonTopMarginSM: 0;
+  $centerButtonOnSM: true;
+  // #endregion Options
+
+  // #region Main Styling
+  display: flex;
+  width: 100%;
+
+  @include media_down($sm) {
+    flex-direction: column;
+  }
+
+  .section-header {
+    font-size: $sectionTitleFontSizeLG;
+
+    @include media_down($md) {
+      font-size: $sectionTitleFontSizeMD;
+    }
+
+    @include media_down($sm) {
+      font-size: $sectionTitleFontSizeSM;
+    }
+  }
+
+  .section-body {
+    min-height: $sectionMinHeight;
+  }
+
+  .image-widget-holder {
+    padding: 0;
+  }
+
+  .image-right {
+    flex-direction: row-reverse;
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: $contentBackgroundColor;
+    padding: $contentPaddingLG;
+
+    @include media_down($md) {
+      padding: $contentPaddingMD;
+    }
+
+    @include media_down($sm) {
+      padding: $contentPaddingSM;
+    }
+  }
+
+  .top-content {
+    @include media_down($sm) {
+      [data-edit-mode] {
+        text-align: $topContentAlignmentSM !important;
+        width: 100% !important;
+      }
+    }
+  }
+
+  .bottom-content {
+    @include media_down($sm) {
+      text-align: $bottomContentAlignmentSM;
+    }
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-size: $titleFontSizeLG;
+    margin-bottom: $titleMarginBottomLG;
+
+    @include media_down($md) {
+      font-size: $titleFontSizeMD;
+      margin-bottom: $titleMarginBottomMD;
+    }
+
+    @include media_down($sm) {
+      font-size: $titleFontSizeSM;
+      margin-bottom: $titleMarginBottomSM;
+    }
+  }
+
+  .p {
+  }
+
+  .button-widget {
+    margin-top: $buttonTopMarginLG;
+
+    #buttonLink {
+      @extend .button;
+      @extend .button-medium;
+      @extend .button-border-black;
+
+      &:hover {
+        p {
+          color: white;
+        }
+      }
+    }
+
+    @include media_down($md) {
+      margin-top: $buttonTopMarginMD;
+
+      #buttonLink {
+        @if $centerButtonOnSM {
+          margin: auto;
+        }
+      }
+    }
+
+    @include media_down($sm) {
+      margin-top: $buttonTopMarginSM;
+    }
+  }
+  // #endregion Main Styling
+
+  // #region Custom Styling
+
+  &.imgwtext-three {
+    margin-bottom: 100px;
+
+    .container {
+      max-width: 1200px;
+    }
+
+    @include media_up($lg) {
+      .section-header {
+        margin-top: 40px;
+      }
+    }
+
+    @include media_down($lg) {
+      margin-bottom: 50px;
+    }
+
+    @include media_down($sm) {
+      margin-bottom: 20px;
+    }
+
+    .content-container {
+      background: transparent;
+      @extend .large-5;
+    }
+
+    .image-widget-holder {
+      @extend .large-7;
+    }
+  }
+
+  // #endregion Custom Styling
+}

@@ -1,0 +1,319 @@
+// #region Options
+$filterTitleFontSizeMD: 14px;
+$filterTitleFontSizeSM: 12px;
+$filterTitleFontFamily: $Serif;
+// #endregion Options
+
+// #region Main Styling
+#faceted-search-container {
+    padding: 0;
+
+    ul,
+    li {
+        margin: 0;
+    }
+
+    .facet-warning-message {
+        margin: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 2px;
+        padding-bottom: 8px;
+    }
+
+    .sidebarBlock-heading {
+        @extend .h3;
+        text-transform: uppercase;
+    }
+
+    .accordion-block[title="Shop"] {
+        display: none;
+    }
+
+    .accordion-block[title="Sale"] {
+        position: relative;
+        .accordion-navigation {
+            position: relative;
+            z-index: 3;
+            &.is-open {
+                padding: 4px 7px;
+            }
+            .accordion-title {
+                padding-right: 20px;
+                width: 100%;
+                + span {
+                    display: none;
+                }
+            }
+            
+        }
+        .accordion-content {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 100%;
+            @include media_down($md) { 
+                right: 0;
+                padding-right: 7px;
+            }
+            .navList-action {
+                padding: 0; 
+                margin: 0;
+                width: 14px;
+                height: 14px;
+                position: unset;
+                &.is-selected {
+                    &::after {
+                        position: absolute;
+                        content: '';
+                        background: #e4e4e4;
+                        width: 100%;
+                        top: 0;
+                        left: 0;
+                        margin: 0;
+                        height: 100%;
+                    }
+                }
+                > span {
+                    display: none;
+                }
+            }
+        }
+        
+    }
+
+    // filters wrapper
+    @include media_up($sm) {
+        .facetedSearch-navList {
+            border-top: 1px solid black;
+            margin-top: 0;
+        }
+
+        .accordion-block {
+            border-bottom: 1px solid black;
+            margin-top: 0;
+            @include padding-y(5px);
+        }
+    }
+
+    @include media_down($sm) {
+        .accordion-content {
+            padding: 5px 10px;
+        }
+    }
+
+    // the filter title
+    .accordion-navigation {
+        padding: 4px 7px;
+
+        &.is-open {
+            padding: 4px 7px 8px;
+        }
+
+        margin-bottom: 0 !important;
+
+        .accordion-title {
+            @extend .small;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        @include media_down($sm) {
+            .accordion-title {
+                margin: 0;
+                padding: 5px 10px;
+            }
+        }
+    }
+
+    .facetedSearch-clearLink {
+        display: none;
+    }
+
+    .navList-action {
+        padding: 3px 7px 3px 7px;
+        margin: 0;
+        @extend .small;
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        text-transform: capitalize;
+
+        &::before,
+        &::after {
+            content: unset;
+        }
+
+        > span {
+            margin-left: 3px;
+        }
+
+        > span + span {
+            display: none;
+        }
+
+        .navList-action-close {
+            margin-left: auto;
+            background: transparent;
+        }
+
+        &.is-selected {
+            font-weight: bold;
+
+            .navList-action-close {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    // accordion arrow
+    .accordion-indicator.toggleLink-text--off {
+        fill: black;
+        outline: black;
+        height: 13px;
+        transform: rotateZ(-90deg);
+    }
+
+    .accordion-indicator.toggleLink-text--on {
+        fill: black;
+        outline: black;
+        height: 13px;
+    }
+    // #endregion Main Styling
+
+
+    &.hideFilters {
+        .accordion-block {
+            display: none;
+            &[title="Colour"], &[title="Styles"] {
+                display: block;
+            }
+        }
+    }
+
+}
+
+
+#shopFilter {
+    ul {
+        @extend .flex;
+        li {
+            width: 100%;
+            &[data-class="men-039-s"] {
+                order: 0;
+            }
+            &[data-class="women-039-s"] {
+                order: 5;
+            }
+            &[data-class="sale"] {
+                order: 10;
+            }
+            &[data-class="accessories"] {
+                order: 15;
+            }
+            &[data-class="certificates"] {
+                order: 15;
+            }
+        }
+    }
+    .shopFilter_default-mobile {
+        display: none;
+        span {
+            position: relative;
+            padding-left: 5px;
+            &::after {
+                content: ',';
+                position: absolute;
+                left: 0;
+            }
+            &:first-of-type {
+                padding-left: 0;
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@include media_down($md) {
+    #shopFilter {
+        position: relative;
+        padding-left: 5px;
+        ul {
+            position: absolute;
+            z-index: 10;
+            padding: 10px;
+            background: #fff;
+            border: 0;
+            box-shadow: 0px 0px 3px #a39c9c;
+            left: 6px;
+            right: 1px;
+            display: none;
+            &.active {
+                display: flex;
+            }
+        }
+        .shopFilter_default-mobile {
+            padding-top: 9px;
+            padding-bottom: 9px;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border: 1px solid #e4e4e4;
+            border-radius: 1px;
+            width: 100%;
+            height: 35px;
+            padding-left: 10px;
+            padding-right: 65px;
+            display: flex;
+            overflow: auto;
+            &::after {
+                @extend .select-caret;
+                content: '';
+                z-index: 5;
+            }
+            &::before {
+                @extend .select-caret;
+                content: '';
+                z-index: 4;
+                background: #fff;
+                top: 1px;
+                bottom: 1px;
+                height: auto;
+                right: 1px;
+            }
+            
+        }
+    }
+}
+
+@include media_down($sm) {
+    .category-page .top-filters {
+        display: block!important;
+        .left-filters > div{
+            > small {
+                display: block;
+                margin-bottom: 10px;
+            }
+            .selected-filter {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .category-page .categories-sidenav {
+        width: 100%!important;
+        #shopFilter {
+            padding-left: 0;
+            margin-bottom: 16px;
+        }
+    }
+    .category-page .page-sidebar#faceted-search-container {
+        width: 100%!important;
+        margin-bottom: 30px!important;
+    }
+}
+

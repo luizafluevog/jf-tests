@@ -1,0 +1,246 @@
+.image-with-text-overlay {
+  // #region Options
+  // Section - General
+  $sectionMinHeightLG: 600px;
+  $sectionMinHeightMD: 330px;
+  $sectionMinHeightSM: 320px;
+
+  // Content - General
+  $contentPaddingLG: 80px 125px;
+  $contentPaddingMD: 40px 70px;
+  $contentPaddingSM: 20px 15px 30px;
+  $contentMaxWidth: 480px;
+  $overlayBackgroundColor: $lightGrey;
+
+  // Title
+  $titleFontSizeLG: 60px;
+  $titleFontSizeMD: 45px;
+  $titleFontSizeSM: 30px;
+  $titleMarginBottomLG: 35px;
+  $titleMarginBottomMD: 20px;
+  $titleMarginBottomSM: 10px;
+
+  // Button
+  $buttonTopMarginLG: 70px;
+  $buttonTopMarginMD: 20px;
+  $buttonTopMarginSM: 20px;
+  // #endregion Options
+
+  // #region Main Styling
+
+  .section-body {
+    display: flex;
+    max-height: $sectionMinHeightLG;
+
+    [data-content-region] {
+      max-height: $sectionMinHeightLG;
+    }
+
+    position: relative;
+    flex-wrap: wrap;
+
+    @include media_down($md) {
+      max-height: $sectionMinHeightMD;
+
+      [data-content-region] {
+        max-height: $sectionMinHeightMD;
+      }
+    }
+
+    @include media_down($sm) {
+      max-height: $sectionMinHeightSM;
+      flex-direction: column;
+
+      [data-content-region] {
+        max-height: $sectionMinHeightSM;
+      }
+    }
+  }
+
+  .image-widget-holder {
+    padding: 0;
+    height: 100%;
+
+    &.cover {
+      @include media_down($sm) {
+        * {
+          height: 100% !important;
+        }
+      }
+    }
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: $contentPaddingLG;
+
+    @include media_down($md) {
+      padding: $contentPaddingMD;
+    }
+
+    @include media_down($sm) {
+      padding: $contentPaddingSM;
+    }
+  }
+
+  h2 {
+    text-transform: uppercase;
+
+    @include media_up($md) {
+      font-size: $titleFontSizeLG;
+      margin-bottom: $titleMarginBottomLG;
+    }
+
+    @include media_down($md) {
+      font-size: $titleFontSizeMD;
+      margin-bottom: $titleMarginBottomMD;
+    }
+
+    @include media_down($sm) {
+      font-size: $titleFontSizeSM;
+      margin-bottom: $titleMarginBottomSM;
+    }
+  }
+
+  .button-widget {
+    margin-top: $buttonTopMarginLG;
+
+    #buttonLink {
+      @extend .button;
+      @extend .button-medium;
+      @extend .button-border-black;
+    }
+
+    @include media_down($md) {
+      margin-top: $buttonTopMarginMD;
+    }
+
+    @include media_down($sm) {
+      margin-top: $buttonTopMarginSM;
+    }
+  }
+  // #endregion Styling
+
+  //#region Custom Styling - Per Section
+  @include media_down($sm) {
+    [data-edit-mode][id] {
+      background-attachment: initial !important;
+    }
+  }
+
+  &.image-with-text-overlay-one {
+    margin-bottom: 35px;
+
+    @include media_down($sm) {
+      margin-bottom: 10px;
+    }
+
+    .section-header {
+      display: none;
+    }
+
+    .section-body {
+      max-height: 330px;
+
+      [data-content-region] {
+        max-height: 330px;
+      }
+
+      @include media_down($sm) {
+        max-height: 100px;
+
+        [data-content-region] {
+          max-height: 100px;
+        }
+      }
+    }
+
+    .section-header {
+      display: none;
+    }
+
+    h2 {
+      margin-bottom: 0;
+
+      @include media_down($sm) {
+        font-size: 20px;
+      }
+    }
+
+    .p {
+      display: none;
+    }
+
+    .button-widget {
+      display: none;
+    }
+  }
+
+  &.image-with-text-overlay-two {
+    .section-header {
+      display: none;
+      text-align: center;
+    }
+
+    .items {
+      h2 {
+        text-align: center;
+      }
+    }
+
+    @include media_down($sm) {
+      .section-body {
+        max-height: 150px;
+        height: 150px;
+      }
+
+      .p {
+        font-size: 10px;
+      }
+    }
+
+    .p {
+      order: 0;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      order: 1;
+      margin-bottom: 0;
+      color: white;
+
+      @include media_up($md) {
+        font-size: 123px;
+      }
+    }
+
+    #buttonLink {
+      p {
+        color: white;
+      }
+      a{
+        background-color: transparent;
+        border: 0;
+      }
+    }
+
+    .button-widget {
+      order: 2;
+
+      #buttonLink {
+        @extend .button-border-white;
+      }
+    }
+  }
+  //#endregion Custom Styling - Per Section
+}

@@ -1,0 +1,60 @@
+.auth-page-heading {
+  @include media-down($sm) {
+    font-size: 31px;
+  }
+}
+
+.auth-page {
+  width: 100%;
+  margin: 25px 0 50px 0;
+  padding-top: 45px;
+  border-top: 1px solid $mediumGrey;
+
+  @include media-down($sm) {
+    margin-top: 0;
+
+    .page-heading {
+      font-size: 31px;
+    }
+  }
+
+  .form-row {
+    margin: 0 0 20px 0;
+    .form-field {
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  .form-label {
+    display: none;
+  }
+
+  .auth-message {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: center;
+    &.or {
+      font-weight: normal;
+    }
+  }
+
+  .new-customer {
+    float: none;
+    width: 100%;
+    margin-bottom: 30px;
+    p {
+      margin-bottom: 15px;
+    }
+  }
+
+  .lost-password {
+    a {
+      text-align: center;
+      text-decoration: none;
+      font-size: 12px;
+    }
+  }
+}

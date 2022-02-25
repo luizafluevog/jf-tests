@@ -1,0 +1,105 @@
+.homepage {
+    .love-to-hate {
+        display: flex;
+        justify-content: center;
+        background: url("https://cdn11.bigcommerce.com/s-y8ztrjb0f7/product_images/uploaded_images/love-hate-bg.png?t=1617906626");
+        background-position-x: center;
+        background-repeat: no-repeat;
+        background-size: 478px;
+        max-width: 600px;
+        @include margin-x(auto);
+        margin-bottom: 35px;
+        margin-top: 35px;
+
+        @include media_down($sm) {
+            background: unset;
+        }
+    }
+
+    .homepage-hr {
+        max-width: 80%;
+        @include margin-x(auto);
+    }
+
+    .new-arrivals {
+        margin-bottom: 56px;
+
+        @include media_down($sm) {
+            margin-bottom: 45px;
+        }
+    }
+
+    .image-with-text {
+        #buttonLink {
+            > a {
+                background: transparent !important;
+                border: 0 !important;
+                color: inherit !important;
+            }
+        }
+        
+        @include media_down($sm) {
+            .section-body {
+                min-height: unset;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            #buttonLink {
+                font-size: 14px !important;
+                min-width: 152px !important;
+                padding-top: 11px;
+                padding-bottom: 11px;
+            }
+        }
+    }
+}
+
+.whats-new-section {
+    .new-arrivals {
+        margin-bottom: 0;
+        padding-bottom: 56px;
+        min-height: 250px;
+        position: relative;
+        @include media_down($sm) {
+            padding-bottom: 45px;
+            margin-bottom: 0;
+        }
+    }
+    .lds-heart-hldr {
+        position: absolute;
+        min-height: 200px;
+        left: 0;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+    }
+    .lds-heart-overlay {
+        z-index: 10;
+        top: 0;
+    }
+    .card {
+        .red_text {
+            color: #eb1420;
+        }
+        .card-img-container {
+            .img-box {
+                display: block;
+                text-align: center;
+                img {
+                    width: auto;
+                    margin: 0 auto;
+                    display: block;
+                    max-width: 100%;
+                }
+            }
+            &::after {
+                position: absolute;
+                top: 0;
+                display: none;
+            }
+        }
+    }
+}

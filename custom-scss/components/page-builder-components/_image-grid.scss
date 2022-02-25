@@ -1,0 +1,140 @@
+.image-grid {
+  // #region Options
+  // Content - General
+  $contentPaddingLG: 23px 10px;
+  $contentPaddingMD: 23px 10px;
+  $contentPaddingSM: 15px;
+  $contentBackgroundColor: transparent;
+
+  // Title
+  $titleFontSizeLG: 18px;
+  $titleFontSizeMD: 18px;
+  $titleFontSizeSM: 14px;
+
+  // Dots
+  $dotDiameter: 10px;
+  $dotsColor: white;
+  $dotColorHover: transparentize($dotsColor, 0.2);
+  $activeDotColor: $red;
+  // #endregion Options
+
+  // #region Main Styling
+  display: flex;
+  width: 100%;
+
+  @include media_down($sm) {
+    .grid-item {
+      &:nth-child(odd) {
+        padding-left: 15px;
+        padding-right: 7px;
+      }
+
+      &:nth-child(even) {
+        padding-left: 7px;
+        padding-right: 15px;
+      }
+    }
+
+    flex-direction: column;
+    .section-body.slick-on-mobile {
+      max-height: 270px;
+    }
+  }
+
+  .image-widget-holder {
+    padding: 0;
+  }
+
+  .grid-item {
+    display: inline-flex;
+    flex-direction: column;
+  }
+
+  .content-container {
+    background-color: $contentBackgroundColor;
+    padding: $contentPaddingLG;
+
+    @include media_down($md) {
+      padding: $contentPaddingMD;
+    }
+
+    @include media_down($sm) {
+      padding: $contentPaddingSM;
+    }
+
+    #buttonLink {
+      @extend .a;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: $titleFontSizeLG;
+
+      @include media_down($md) {
+        font-size: $titleFontSizeMD;
+      }
+
+      @include media_down($sm) {
+        font-size: $titleFontSizeSM;
+      }
+    }
+  }
+
+  .slick-dots {
+    li {
+      background: transparent;
+      padding: 5px 5px;
+
+      width: auto;
+      height: auto;
+
+      button {
+        width: $dotDiameter;
+        height: $dotDiameter;
+
+        &::before {
+          width: $dotDiameter;
+          height: $dotDiameter;
+        }
+      }
+
+      &:not(.slick-active) {
+        button {
+          &::before {
+            background: white;
+            opacity: 1;
+          }
+
+          &:hover {
+            &::before {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+
+      &.slick-active {
+        button {
+          &::before {
+            background: $red;
+          }
+        }
+      }
+    }
+  }
+  // #endregion Main Styling
+
+  // #region Custom Styling
+  .slick-dots li:not(.slick-active) button::before {
+    background: black;
+  }
+
+  .section-header {
+    display: none;
+  }
+
+  &.imggrid-one {
+    @include media_up($sm) {
+      padding: 0 40px;
+    }
+  }
+  // #endregion Custom Styling
+}

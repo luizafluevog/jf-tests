@@ -1,0 +1,386 @@
+// #region Options
+$hasArabic: false;
+
+$h1FontSizeLG: 31px;
+$h1FontSizeMD: 31px;
+$h1FontSizeSM: 31px;
+$h1LetterSpacingLG: 1.28px;
+$h1LetterSpacingMD: 1.28px;
+$h1LetterSpacingSM: 1.28px;
+$h1MarginBottomLG: 32px;
+$h1MarginBottomMD: 20px;
+$h1MarginBottomSM: 10px;
+$h1FontWeight: bold;
+
+$h2FontSizeLG: 31px;
+$h2FontSizeMD: 31px;
+$h2FontSizeSM: 31px;
+$h2LetterSpacingLG: 1.28px;
+$h2LetterSpacingMD: 1.28px;
+$h2LetterSpacingSM: 1.28px;
+$h2MarginBottomLG: 32px;
+$h2MarginBottomMD: 20px;
+$h2MarginBottomSM: 10px;
+$h2FontWeight: bold;
+
+$h3FontSizeLG: 23px;
+$h3FontSizeMD: 23px;
+$h3FontSizeSM: 23px;
+$h3LetterSpacingLG: initial;
+$h3LetterSpacingMD: initial;
+$h3LetterSpacingSM: initial;
+$h3MarginBottomLG: 10px;
+$h3MarginBottomMD: 10px;
+$h3MarginBottomSM: 5px;
+$h3FontWeight: bold;
+
+$h4FontSizeLG: 31px;
+$h4FontSizeMD: 31px;
+$h4FontSizeSM: 31px;
+$h4LetterSpacingLG: 1.28px;
+$h4LetterSpacingMD: 1.28px;
+$h4LetterSpacingSM: 1.28px;
+$h4MarginBottomLG: 32px;
+$h4MarginBottomMD: 20px;
+$h4MarginBottomSM: 10px;
+$h4FontWeight: bold;
+
+$h5FontSizeLG: 18px;
+$h5FontSizeMD: 18px;
+$h5FontSizeSM: 14px;
+$h5LetterSpacingLG: 0.72px;
+$h5LetterSpacingMD: 0.72px;
+$h5LetterSpacingSM: 0.62px;
+$h5MarginBottomLG: 0;
+$h5MarginBottomMD: 0;
+$h5MarginBottomSM: 0;
+$h5FontWeight: bold;
+
+$h6FontSizeLG: 18px;
+$h6FontSizeMD: 18px;
+$h6FontSizeSM: 14px;
+$h6LetterSpacingLG: 0.72px;
+$h6LetterSpacingMD: 0.72px;
+$h6LetterSpacingSM: 0.72px;
+$h6MarginBottomLG: 20px;
+$h6MarginBottomMD: 20px;
+$h6MarginBottomSM: 10px;
+$h6FontWeight: bold;
+
+$pFontSizeLG: 14px;
+$pFontSizeMD: 12px;
+$pFontSizeSM: 12px;
+$pLetterSpacingLG: 0.56px;
+$pLetterSpacingMD: 0.56px;
+$pLetterSpacingSM: 0.56px;
+$pMarginBottomLG: 32px;
+$pMarginBottomMD: 20px;
+$pMarginBottomSM: 20px;
+$pFontWeight: normal;
+$pLineHeightLG: 20px;
+$pLineHeightMD: 18px;
+$pLineHeightSM: 18px;
+
+$smallFontSizeLG: 12px;
+$smallFontSizeMD: 12px;
+$smallFontSizeSM: 12px;
+$smallLetterSpacingLG: 0.48px;
+$smallLetterSpacingMD: 0.48px;
+$smallLetterSpacingSM: 0.48px;
+$smallMarginBottomLG: 0;
+$smallMarginBottomMD: 0;
+$smallMarginBottomSM: 0;
+$smallLineHeightLG: initial;
+$smallLineHeightMD: initial;
+$smallLineHeightSM: initial;
+
+$pageHeadingFontSizeLG: 43px;
+$pageHeadingFontSizeMD: 20px;
+$pageHeadingFontSizeSM: 20px;
+$pageHeadingLetterSpacingLG: 1.72px;
+$pageHeadingLetterSpacingMD: 1.72px;
+$pageHeadingLetterSpacingSM: 0.8px;
+$pageHeadingMarginBottomLG: 20px;
+$pageHeadingMarginBottomMD: 20px;
+$pageHeadingMarginBottomSM: 10px;
+$pageHeadingFontWeight: bolder;
+
+// #endregion Options
+
+// #region GLOBAL TYPOGRAPHY
+h1,
+.h1 {
+  font-family: $Serif;
+  color: $black;
+  font-weight: $h1FontWeight;
+  font-size: $h1FontSizeLG;
+  margin-bottom: $h1MarginBottomLG;
+  letter-spacing: $h1LetterSpacingLG;
+
+  @include media_down($md) {
+    font-size: $h1FontSizeMD;
+    margin-bottom: $h1MarginBottomMD;
+    letter-spacing: $h1LetterSpacingMD;
+  }
+
+  @include media_down($sm) {
+    font-size: $h1FontSizeSM;
+    margin-bottom: $h1MarginBottomSM;
+    letter-spacing: $h1LetterSpacingSM;
+  }
+}
+
+h2,
+.h2 {
+  font-family: $Serif;
+  color: $black;
+  font-weight: $h2FontWeight;
+  font-size: $h2FontSizeLG;
+  margin-bottom: $h2MarginBottomLG;
+  letter-spacing: $h2LetterSpacingLG;
+
+  @include media_down($md) {
+    font-size: $h2FontSizeMD;
+    margin-bottom: $h2MarginBottomMD;
+    letter-spacing: $h2LetterSpacingMD;
+  }
+
+  @include media_down($sm) {
+    font-size: $h2FontSizeSM;
+    margin-bottom: $h2MarginBottomSM;
+    letter-spacing: $h2LetterSpacingSM;
+  }
+}
+
+h3,
+.h3 {
+  font-family: $Serif;
+  color: $black;
+  font-weight: $h3FontWeight;
+  font-size: $h3FontSizeLG;
+  margin-bottom: $h3MarginBottomLG;
+  letter-spacing: $h3LetterSpacingLG;
+
+  @include media_down($md) {
+    font-size: $h3FontSizeMD;
+    margin-bottom: $h3MarginBottomMD;
+    letter-spacing: $h3LetterSpacingMD;
+  }
+
+  @include media_down($sm) {
+    font-size: $h3FontSizeSM;
+    margin-bottom: $h3MarginBottomSM;
+    letter-spacing: $h3LetterSpacingSM;
+  }
+}
+
+h4,
+.h4 {
+  font-family: $Serif;
+  color: $black;
+  font-weight: $h4FontWeight;
+  font-size: $h4FontSizeLG;
+  margin-bottom: $h4MarginBottomLG;
+  letter-spacing: $h4LetterSpacingLG;
+
+  @include media_down($md) {
+    font-size: $h4FontSizeMD;
+    margin-bottom: $h4MarginBottomMD;
+    letter-spacing: $h4LetterSpacingMD;
+  }
+
+  @include media_down($sm) {
+    font-size: $h4FontSizeSM;
+    margin-bottom: $h4MarginBottomSM;
+    letter-spacing: $h4LetterSpacingSM;
+  }
+}
+
+h5,
+.h5 {
+  font-family: $Serif;
+  color: $black;
+  font-weight: $h5FontWeight;
+  font-size: $h5FontSizeLG;
+  margin-bottom: $h5MarginBottomLG;
+  letter-spacing: $h5LetterSpacingLG;
+
+  @include media_down($md) {
+    font-size: $h5FontSizeMD;
+    margin-bottom: $h5MarginBottomMD;
+    letter-spacing: $h5LetterSpacingMD;
+  }
+
+  @include media_down($sm) {
+    font-size: $h5FontSizeSM;
+    margin-bottom: $h5MarginBottomSM;
+    letter-spacing: $h5LetterSpacingSM;
+  }
+}
+
+h6,
+.h6 {
+  font-family: $SansSerif;
+  color: $black;
+  font-weight: $h6FontWeight;
+  font-size: $h6FontSizeLG;
+  margin-bottom: $h6MarginBottomLG;
+  letter-spacing: $h6LetterSpacingLG;
+
+  @include media_down($md) {
+    font-size: $h6FontSizeMD;
+    margin-bottom: $h6MarginBottomMD;
+    letter-spacing: $h6LetterSpacingMD;
+  }
+
+  @include media_down($sm) {
+    font-size: $h6FontSizeSM;
+    margin-bottom: $h6MarginBottomSM;
+    letter-spacing: $h6LetterSpacingSM;
+  }
+}
+
+p,
+.p {
+  font-family: $SansSerif;
+  color: $black;
+  font-weight: $pFontWeight;
+  font-size: $pFontSizeLG;
+  margin-bottom: $pMarginBottomLG;
+  letter-spacing: $pLetterSpacingLG;
+  line-height: $pLineHeightLG;
+
+  @include media_down($md) {
+    font-size: $pFontSizeMD;
+    margin-bottom: $pMarginBottomMD;
+    letter-spacing: $pLetterSpacingMD;
+    line-height: $pLineHeightMD;
+  }
+
+  @include media_down($sm) {
+    font-size: $pFontSizeSM;
+    margin-bottom: $pMarginBottomSM;
+    letter-spacing: $pLetterSpacingSM;
+    line-height: $pLineHeightSM;
+  }
+}
+
+ul,
+ol {
+  margin: 0;
+
+  li {
+    @include media_down($sm) {
+      @extend .p;
+    }
+  }
+}
+
+small,
+.small {
+  font-family: $SansSerif;
+  color: $black;
+  font-size: $smallFontSizeLG;
+  margin-bottom: $smallMarginBottomLG;
+  letter-spacing: $smallLetterSpacingLG;
+  line-height: $smallLineHeightLG;
+
+  @include media_down($md) {
+    font-size: $smallFontSizeMD;
+    margin-bottom: $smallMarginBottomMD;
+    letter-spacing: $smallLetterSpacingMD;
+    line-height: $smallLineHeightMD;
+  }
+
+  @include media_down($sm) {
+    font-size: $smallFontSizeSM;
+    margin-bottom: $smallMarginBottomSM;
+    letter-spacing: $smallLetterSpacingSM;
+    line-height: $smallLineHeightSM;
+  }
+}
+
+.page-heading {
+  @extend .container;
+  text-transform: uppercase;
+  font-family: "BauerBodni BT";
+  color: $black;
+  font-weight: $pageHeadingFontWeight;
+  font-size: $pageHeadingFontSizeLG;
+  margin-bottom: $pageHeadingMarginBottomLG;
+  letter-spacing: $pageHeadingLetterSpacingLG;
+
+  @include media_down($md) {
+    font-size: $pageHeadingFontSizeMD;
+    margin-bottom: $pageHeadingMarginBottomMD;
+    letter-spacing: $pageHeadingLetterSpacingMD;
+  }
+
+  @include media_down($sm) {
+    font-size: $pageHeadingFontSizeSM;
+    margin-bottom: $pageHeadingMarginBottomSM;
+    letter-spacing: $pageHeadingLetterSpacingSM;
+  }
+}
+
+@if $hasArabic {
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6,
+  ul,
+  ol,
+  p,
+  .p,
+  small {
+    [dir="rtl"] & {
+      letter-spacing: normal !important;
+      font-family: $Arabic;
+    }
+  }
+}
+
+// #endregion GLOBAL TYPOGRAPHY
+
+// #region HELPER CLASSES
+.serif {
+  font-family: $Serif;
+
+  [dir="rtl"] & {
+    letter-spacing: normal;
+    font-family: $Arabic;
+  }
+}
+
+.serif-imp {
+  font-family: $Serif !important;
+}
+
+.serif-sans {
+  font-family: $SansSerif;
+
+  [dir="rtl"] & {
+    letter-spacing: normal;
+    font-family: $Arabic;
+  }
+}
+
+.serif-sans-imp {
+  font-family: $SansSerif !important;
+}
+
+.arabic {
+  [dir="rtl"] & {
+    letter-spacing: normal;
+    font-family: $Arabic;
+  }
+}
+// #endregion HELPER CLASSES

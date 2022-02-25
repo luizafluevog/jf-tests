@@ -1,0 +1,19 @@
+@mixin padding-y($number) {
+  padding-top: $number;
+  padding-bottom: $number;
+}
+
+@mixin padding-x($number) {
+  padding-left: $number;
+  padding-right: $number;
+}
+
+@mixin margin-y($number) {
+  margin-top: $number;
+  margin-bottom: $number;
+}
+
+@mixin margin-x($number) {
+  margin-left: $number;
+  margin-right: $number;
+}

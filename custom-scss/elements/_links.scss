@@ -1,0 +1,37 @@
+//#region Options
+$aBaseColor: $black;
+$aOnHoverColor: transparentize($black, 0.3);
+$aOnActiveColor: transparentize($black, 0.5);
+//#endregion Options
+
+a,
+.a {
+  transition: unset;
+  display: inline-block;
+  outline: 0;
+  font-weight:  600;
+  color: $aBaseColor;
+  font-family: $SansSerif;
+  line-height: normal;
+  border: 0;
+  background: transparent;
+  color: black;
+  padding: 0;
+
+  &:disabled, &[disabled='disabled'] {
+    pointer-events: none;
+    color: grey;
+  }
+
+  &:hover {
+    color: $aOnHoverColor;
+    background: transparent;
+  }
+
+  &:active,
+  &:focus {
+    color: $aOnActiveColor;
+    outline: 0;
+    background: transparent;
+  }
+}

@@ -1,0 +1,18 @@
+// responsiveness
+@mixin media_up($screen-width) {
+  @media (min-width: $screen-width) {
+    @content;
+  }
+}
+
+@mixin media_down($screen-width) {
+  @media (max-width: $screen-width - 1) {
+    @content;
+  }
+}
+
+@mixin media_between($screen-width-1, $screen-width-2) {
+  @media (min-width: $screen-width-1 + 1) and (max-width: $screen-width-2 - 1) {
+    @content;
+  }
+}

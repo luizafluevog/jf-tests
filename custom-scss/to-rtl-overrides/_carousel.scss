@@ -1,0 +1,19 @@
+[dir="rtl"] .heroCarousel {
+  .slick-next {
+    left: 25px;
+    right: unset;
+    
+    &::before {
+      transform: rotateZ(180deg);
+    }
+  }
+
+  .slick-prev {
+    right: 25px;
+    left: unset;
+
+    &::before {
+      transform: rotateZ(180deg);
+    }
+  }
+}

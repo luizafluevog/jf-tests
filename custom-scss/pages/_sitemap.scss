@@ -1,0 +1,138 @@
+// .sitemap-page {
+//     margin-bottom: 30px;
+
+//     > .row {
+//         max-width: 710px;
+//         @include margin-x(auto);
+//     }
+
+//     h1 {
+//         width: 100%;
+//         padding-bottom: 40px;
+//         margin-bottom: 25px;
+//         margin-top: 35px;
+//         border-bottom: 1px solid #b9b9b9;
+//         font-size: 43px;
+//         text-transform: uppercase;
+//     }
+
+//     .main-label {
+//         text-transform: uppercase;
+//         @include margin-y(14px);
+//     }
+
+//     ul,
+//     li,
+//     a {
+//         list-style: none;
+//         margin: 0;
+//         font-weight: normal;
+//         text-decoration: none;
+//     }
+
+//     ul.main-ul {
+//         width: 100%;
+
+//         h6 {
+//             font-weight: bold;
+//         }
+
+//         > li {
+//             width: 100%;
+
+//             h6 {
+//                 @extend .small-12;
+//             }
+
+//             > ul {
+//                 width: 100%;
+//                 display: flex;
+//                 flex-wrap: wrap;
+//                 align-items: flex-start;
+
+//                 > li {
+//                     @extend .small-6;
+//                     margin-bottom: 30px;
+
+//                     > a {
+//                         font-weight: bold;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+.sitemap-page {
+    padding-bottom: 82px;
+    margin-top: 20px;
+
+    > .row {
+        @include media_down($sm) {
+            @include margin-x(0);
+        }
+    }
+
+    h1 {
+        width: 100%;
+        padding-bottom: 40px;
+        margin-bottom: 25px;
+        border-bottom: 1px solid #b9b9b9;
+        margin: 0 0 12px;
+        font-size: 43px;
+        line-height: 40px;
+        text-transform: uppercase;
+
+        @include media_down($sm) {
+            font-size: 30px;
+            padding-bottom: 20px;
+            margin-bottom: 0;
+        }
+    }
+
+    .entry-content {
+        border: unset;
+        width: 100%;
+        padding-top: 0;
+
+        .column {
+            float: left;
+            width: 50%;
+            height: auto;
+            margin-top: -14px;
+            padding-right: 45px;
+            display: block;
+        }
+
+        ul {
+            margin: 14px 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            &:before {
+                content: "";
+                font-size: 12px;
+                padding-right: 4px;
+            }
+
+            margin: 0;
+
+            > a {
+                font-weight: initial;
+            }
+        }
+
+        h4 {
+            margin: 14px 0;
+            line-height: 20px;
+            text-transform: uppercase;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+    }
+}

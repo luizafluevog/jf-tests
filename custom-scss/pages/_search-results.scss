@@ -1,0 +1,95 @@
+.search-results-page {
+    .suggestion-title {
+        margin-bottom: 16px;
+    }
+    .nav {
+        width: 100%;
+    }
+
+    .page-content {
+        width: 100%;
+    }
+
+    .actionBar-section .form-select {
+        height: unset;
+    }
+
+    .page-sidebar {
+        @include media_up($md) {
+            max-width: 25%;
+            @include padding-x(20px);
+        }
+    }
+
+    .refine-title {
+        @include media_down($sm) {
+            margin-top: 10px;
+        }
+    }
+
+    .page-content {
+        @include media_up($md) {
+            max-width: 75%;
+            @include padding-x(20px);
+        }
+    }
+
+    .actionBar-section {
+        .form-field {
+            border: 1px solid black;
+            border-radius: 1px;
+        }
+
+        .form-label,
+        .form-select {
+            color: black;
+        }
+    }
+
+    .navBar {
+        margin-bottom: 30px;
+    }
+
+    #search-results-content-count {
+        color: black;
+
+        @include media_down($sm) {
+            margin-top: 10px;
+        }
+    }
+
+    #faceted-search-container .accordion-content {
+        padding-top: 15px;
+        padding-bottom: 5px;
+    }
+}
+
+#quickSearch {
+    background: white;
+    box-shadow: 0 1px 6px 1px #c4c4c4;
+
+    .product {
+        margin-bottom: 15px;
+    }
+
+    .product-icon-wrapper {
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+
+    .card--alternate:hover {
+        border-color: black;
+
+        .card-body {
+            background: black;
+        }
+
+        .price-section {
+            color: white;
+
+            * {
+                color: white;
+            }
+        }
+    }
+}

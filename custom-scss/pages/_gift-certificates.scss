@@ -1,0 +1,123 @@
+.gift-certificate-page {
+    margin-bottom: 40px;
+
+    ul,
+    ol {
+        list-style-position: inside;
+    }
+
+    .navBar--sub.navbar--gift-certificates {
+        margin-bottom: 20px;
+
+        .navBar-section {
+            text-align: center;
+        }
+
+        .navBar-item {
+            color: black;
+
+            @include media_down($sm) {
+                display: inline-block;
+            }
+
+            &.is-active {
+                font-weight: bold;
+            }
+        }
+
+        .navBar-action {
+            color: black;
+            font-weight: normal;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .form-field {
+        margin-bottom: 15px;
+    }
+
+    .categories-sidenav {
+        width: 100%;
+        .custom-select {
+            padding-left: 0;
+        }
+    }
+
+    .page-heading {
+        border-bottom: 1px solid $mediumGrey;
+        padding-bottom: 15px;
+        margin-top: 20px;
+    }
+
+    .content {
+        small {
+            display: block;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+    }
+
+    .gift-certificate-form {
+        margin-top: 35px;
+        margin-bottom: 100px;
+
+        .form-field-group {
+            border: 0;
+        }
+
+        .form-field {
+            p {
+                font-weight: bold;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+            small {
+                line-height: 1.5;
+            }
+        }
+
+        .form-label {
+            @extend .small;
+            color: $black;
+            margin-bottom: 5px;
+            line-height: 1.5;
+            small {
+                display: inline;
+                float: none;
+                color: $red;
+                font-size: 14px;
+            }
+        }
+
+        .form-input {
+            border-color: $mediumGrey;
+        }
+
+        .send-to-radio-group {
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .form-actions {
+            text-align: left;
+            padding-left: 4px;
+            margin-top: 24px;
+            float: left;
+
+            #gift-certificate-submit {
+                min-width: 133px;
+            }
+
+            input {
+                @include media_down($md) {
+                    width: auto;
+                    margin-top: unset;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

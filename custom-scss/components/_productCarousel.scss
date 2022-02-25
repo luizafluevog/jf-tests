@@ -1,0 +1,89 @@
+.productCarousel {
+    // #region Options
+    // Title
+    $contentTitleFontSizeLG: 80px;
+    $contentTitleFontSizeMD: 40px;
+    $contentTitleFontSizeSM: 40px;
+
+    // Arrows
+    $hideArrows: false;
+
+    // Dots
+    $dotDiameter: 13px;
+    $dotsColor: white;
+    $dotColorHover: transparentize($dotsColor, 0.2);
+    $activeDotColor: $red;
+
+    // Play/Pause button
+    $hidePlayPauseButton: false;
+
+    // #endregion
+
+    @if $hideArrows {
+        .slick-arrow {
+            display: none !important;
+        }
+    }
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    .heroCarousel-title {
+        color: black;
+        @extend .font-Serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: $contentTitleFontSizeLG;
+
+        @include media_down($md) {
+            font-size: $contentTitleFontSizeMD;
+        }
+
+        @include media_down($sm) {
+            font-size: $contentTitleFontSizeSM;
+        }
+    }
+
+    .slick-dots {
+        li {
+            background: transparent;
+            padding: 5px 5px;
+
+            width: auto;
+            height: auto;
+
+            button {
+                width: $dotDiameter;
+                height: $dotDiameter;
+
+                &::before {
+                    width: $dotDiameter;
+                    height: $dotDiameter;
+                }
+            }
+
+            &:not(.slick-active) {
+                button {
+                    &::before {
+                        background: white;
+                        opacity: 1;
+                    }
+
+                    &:hover {
+                        &::before {
+                            opacity: 0.8;
+                        }
+                    }
+                }
+            }
+
+            &.slick-active {
+                button {
+                    &::before {
+                        background: $red;
+                    }
+                }
+            }
+        }
+    }
+}

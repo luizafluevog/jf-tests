@@ -1,0 +1,94 @@
+// grid
+$columns: 12;
+
+$screen-identifiers: small, medium, large, xlarge, xxlarge;
+
+$sm: 576px; //mobile
+$md: 800px; //tablet
+$lg: 992px; //tablet-large or laptop small
+$xl: 1200px; // laptop / desktop
+$xxl: 1900px; // large desktop screens / TVs
+
+$grid-breakpoints: (
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl,
+  xxl: $xxl,
+);
+
+// $container-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+//   xl: 1180px,
+//   xxl: 1660px,
+// );
+
+$container-widths: (
+  sm: 540px,
+  md: 750px,
+  lg: 970px,
+  xl: 990px,
+  xxl: 990px,
+);
+
+// generates small/medium/large-{column-width}... css
+@each $name in $screen-identifiers {
+  @for $i from 1 through $columns {
+    .#{$name}-#{$i} {
+      position: relative;
+      min-height: 1px;
+      padding-right: 20px;
+      padding-left: 20px;
+
+      $breakpoint: 0;
+      @if $name == "small" {
+        $breakpoint: 0;
+      } @else if $name == "medium" {
+        $breakpoint: map-get($grid-breakpoints, md);
+      } @else if $name == "large" {
+        $breakpoint: map-get($grid-breakpoints, lg);
+      } @else if $name == "xlarge" {
+        $breakpoint: map-get($grid-breakpoints, xl);
+      } @else if $name == "xxlarge" {
+        $breakpoint: map-get($grid-breakpoints, xxl);
+      }
+
+      @include media_up($breakpoint) {
+        flex: 0 0 auto;
+        width: calc(100% * #{$i} / #{$columns});
+      }
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @each $name, $val in $container-widths {
+    @include media_up(map-get($grid-breakpoints, $name)) {
+      max-width: $val;
+    }
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -20px;
+  margin-left: -20px;
+  width: unset;
+}

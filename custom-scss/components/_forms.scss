@@ -1,0 +1,131 @@
+// #region Options
+//// Fonts
+$textInputFontSizeMD: 14px;
+$textInputFontSizeSM: 12px;
+$inputFontWeight: 500;
+$inputRadius: 0px;
+
+$dropdownInputFontSizeMD: 12px;
+$dropdownInputFontSizeSM: 10px;
+$dropdownInputPadding: 10px 35px 10px 10px;
+
+// Custom Dropdown Arrow Settings
+// to create a custom arrow you should create some extra elements since the you can't use background-image nor ::after on dropdowns
+
+// The code for custom arrows works on the following code
+// <div class="custom-select">
+//     <select name="country-page-dropdown" id="country-page">
+//         <option value="france">France</option>
+//         <option value="Canada">Canada</option>
+//     </select>
+
+//     <div class="select-caret">
+
+//     </div>
+// </div>
+$removeDefaultDropdownArrow: "true";
+$customArrowLink: "../icons/custom/caret-down.svg";
+$arrowContainerWidth: 40px;
+$customArrowSize: 12px;
+
+// #endregion Options
+
+.form-field {
+    float: none;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea.form-input {
+    font-size: $textInputFontSizeMD;
+    border-radius: $inputRadius;
+    font-family: $SansSerif;
+    font-weight: $inputFontWeight;
+    height: 35px;
+    border: 1px solid $mediumGrey;
+
+    @include media_down($sm) {
+        font-size: $textInputFontSizeSM;
+    }
+}
+
+select,
+select.form-select {
+    font-size: $dropdownInputFontSizeMD;
+    padding: $dropdownInputPadding;
+    border-radius: $inputRadius;
+    font-family: $SansSerif;
+    font-weight: $inputFontWeight;
+    cursor: pointer;
+    height: 35px;
+    border: 1px solid $mediumGrey;
+    background-position: unset center;
+    background-size: 17px;
+
+    @if $removeDefaultDropdownArrow == "true" {
+        appearance: none;
+    }
+
+    option {
+        font-family: $SansSerif;
+        font-size: $dropdownInputFontSizeMD;
+        zoom: 1.2;
+    }
+
+    @include media_down($sm) {
+        font-size: $dropdownInputFontSizeSM;
+
+        option {
+            font-size: $dropdownInputFontSizeSM;
+        }
+    }
+}
+
+@if $removeDefaultDropdownArrow == "true" {
+    .custom-select {
+        position: relative;
+
+        select {
+            height: 35px;
+            font-size: 14px;
+            @include padding-y(5px);
+            border-radius: unset;
+        }
+    }
+
+    .select-caret {
+        background: url("#{$customArrowLink}") no-repeat;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: $arrowContainerWidth;
+
+        background-size: $customArrowSize;
+        background-position: center;
+        pointer-events: none;
+    }
+}
+
+// #region Custom Styling
+select {
+    &.dark-mode {
+        // filter: invert(1);
+        // background: black;
+        // border: 1px solid white;
+        // color: white;
+        margin: 0;
+        background: #000 url('https://www.fluevog.com/wp-content/themes/fluevog/static/images/select-arrow-white.png') top right no-repeat;
+        border-color: #fff;
+        color: #fff;
+        text-transform: uppercase;
+        background-position: top right;
+    }
+}
+
+.form-prefixPostfix .form-input {
+    border-radius: 1px;
+}
+// #endregion Custom Styling

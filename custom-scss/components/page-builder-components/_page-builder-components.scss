@@ -1,0 +1,30 @@
+@import "./builder-component-fix";
+@import "./image-with-text";
+@import "./image-with-text-overlay";
+@import "./image-grid";
+@import "./image-with-text-widget";
+
+.simple-component {
+    .element {
+        p {
+            color: inherit;
+            font-weight: inherit;
+        }
+    }
+
+    .section-body {
+        width: 100%;
+    }
+
+    @include media_down($lg) {
+        margin-top: 50px;
+    }
+
+    @include media_down($sm) {
+        margin-top: 20px;
+    }
+
+    .small-12 {
+        @extend .p-sm-0;
+    }
+}

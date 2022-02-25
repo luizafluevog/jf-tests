@@ -1,0 +1,37 @@
+nav.pagination {
+    .pagination-item {
+        float: none;
+
+        &:not([disables="false"]) {
+            cursor: default;
+            // &.pagination-item--previous {
+            //     border-right: 1px solid $darkGrey;
+            // }
+
+            // &.pagination-item--next {
+            //     border-left: 1px solid $darkGrey;
+            // }
+
+            .pagination-link {
+                color: $darkGrey;
+                pointer-events: none;
+
+                .icon {
+                    display: none;
+                }
+            }
+        }
+
+        .pagination-link {
+            @include padding-y(0);
+            font-weight: bold;
+            @extend .small;
+
+            .icon {
+                svg {
+                    fill: black;
+                }
+            }
+        }
+    }
+}

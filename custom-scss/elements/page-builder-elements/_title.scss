@@ -1,0 +1,16 @@
+.element.simple-title {
+    font-family: $Serif;
+    font-size: 40px;
+
+    p {
+        line-height: 1.1;
+    }
+
+    @include media_down($lg) {
+        font-size: 30px;
+    }
+
+    @include media_down($sm) {
+        font-size: 20px;
+    }
+}

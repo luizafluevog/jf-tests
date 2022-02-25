@@ -1,0 +1,253 @@
+.container-fluid.px-0 {
+    [aria-label="Breadcrumb"] + .page-heading {
+        @include media_down($sm) {
+            font-size: 31px;
+        }
+    }
+}
+
+.account-page {
+    >.row {
+        margin-top: 30px;
+        @include media_down($md) {
+            margin-top: 0;
+        }
+    }
+
+    .account {
+        @include media-down($md) {
+            padding: 0;
+        }
+    }
+
+    .page-heading {
+        text-align: left;
+        padding: 0;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-bottom: 46px;
+        @extend .border-bottom;
+
+        @include media-down($md) {
+            padding: 10px 0;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+    }
+
+    .static-page-sidenav:first-child {
+        margin-top: 50px;
+        @include media_down($md) {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    .faq-and-friends.mobile-dropdown{
+        border-top: 0;
+
+        strong {
+            display: inline-block;
+        }
+    }
+}
+
+.navBar--account {
+    margin-bottom: 30px;
+    @extend .container;
+
+    a.navBar-action,
+    .navBar-item {
+        color: black;
+        @extend .p;
+        margin-bottom: 0;
+    }
+}
+
+.account {
+    @include media_up($sm) {
+        min-height: 400px;
+    }
+    
+    .account-product-detail-heading,
+    .account-product-detail {
+        font-family: $SansSerif;
+        color: black;
+    }
+
+    $ENABLE_SSO: "true";
+
+    @if $ENABLE_SSO == "true" {
+        // .form-field--input.form-field--inputPassword {
+        //     display: none;
+        // }
+
+        .reset-password {
+            margin-top: 15px;
+        }
+    }
+
+    .account-orderStatus {
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 10px;
+
+        .account-orderStatus-label {
+            font-family: "Karla", "serif";
+            letter-spacing: 1px;
+        }
+
+        &:not(.completed) {
+            background: #c1c1c1;
+        }
+
+        &.completed {
+            background: green;
+
+            .account-orderStatus-label {
+                color: white;
+            }
+        }
+    }
+
+    .account-orderStatus-label {
+        height: 15px;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        @extend .small;
+    }
+
+    .account-listItem {
+        margin-bottom: 0;
+    }
+
+    .account-product-description {
+        margin-bottom: 20px;
+    }
+
+    @extend .container;
+
+    .panel--address {
+        .button {
+            width: auto;
+        }
+
+        .panel-body {
+            @include media_down($sm) {
+                min-height: 200px;
+            }
+        }
+    }
+
+    .account-body {
+        @extend .row;
+        margin-bottom: 30px;
+
+        [data-address-form] {
+            @extend .small-12;
+        }
+    }
+
+    .account-content {
+        @extend .small-12;
+
+        &.account-content--fixedSmall {
+            @extend .medium-8;
+        }
+    }
+
+    .account-orderTotal-key {
+        color: black;
+    }
+
+    .account-orderTotal-value,
+    .account-orderTotal-key {
+        @include padding-y(10px);
+    }
+
+    .account-product-title {
+        @extend .h3;
+        line-height: 1.2;
+    }
+
+    .account-product-image {
+        top: 50%;
+        bottom: unset;
+        position: absolute;
+        transform: translateY(-50%);
+    }
+
+    @include media_up($sm) {
+        .account-product-body {
+            padding-bottom: 0;
+        }
+    }
+
+    .definitionList-key {
+        font-weight: bold;
+        color: black;
+    }
+
+    .definitionList-value {
+        color: black;
+    }
+
+    .account-sidebar {
+        @include padding-x(20px);
+
+        .button {
+            @extend .button-black;
+            @extend .button-small;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        @include media_down($sm) {
+            li {
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    .account-heading {
+        display: none;
+        @include media_up($sm) {
+            font-size: 36px;
+        }
+    }
+
+    .account-head {
+        display: none;
+    }
+
+    table,
+    td,
+    th {
+        font-family: $SansSerif;
+    }
+
+    .addressList {
+        @extend .small-12;
+        @include margin-x(0);
+        margin-top: 20px;
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .address {
+            @include media_down($sm) {
+                padding: 0;
+            }
+
+            li {
+                font-size: 12px;
+            }
+        }
+    }
+}

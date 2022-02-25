@@ -1,0 +1,246 @@
+//#region OPTIONS
+// SET THE CONTENT BOX'S POSITION
+@mixin setContentPos($topOrBottom, $leftOrRight) {
+    .heroCarousel-content {
+        transform: unset;
+
+        @if $topOrBottom == top {
+            top: 0;
+            bottom: unset;
+        } @else if $topOrBottom == bottom {
+            top: unset;
+            bottom: 0;
+        }
+
+        @if $leftOrRight == left {
+            left: 0;
+            right: unset;
+        } @else if $leftOrRight == right {
+            right: 0;
+            left: unset;
+        }
+    }
+}
+// #endregion
+
+.heroCarousel {
+    // #region Options
+    // Slider - General
+    $shouldStretch: true;
+    $hideArrows: false;
+    $hideArrowsOnMobile: true;
+    $hidePlayPauseButton: true;
+    $sliderHeightLG: 710px;
+    $sliderHeightMD: 40vh;
+    $sliderHeightSM: 160px;
+
+    // Content
+    $contentBackgroundColor: transparent;
+    $contentPaddingLG: 90px 70px;
+    $contentPaddingMD: 20px;
+    $contentPaddingSM: 20px;
+    @include setContentPos(bottom, right);
+    $contentTitleFontSizeLG: 80px;
+    $contentTitleFontSizeMD: 40px;
+    $contentTitleFontSizeSM: 40px;
+    $contentDescriptionFontSizeLG: 20px;
+    $contentDescriptionFontSizeMD: 14px;
+    $contentDescriptionFontSizeSM: 14px;
+
+    // Dots
+    $dotDiameter: 13px;
+    $dotsColor: white;
+    $dotColorHover: transparentize($dotsColor, 0.2);
+    $activeDotColor: $red;
+
+    // #endregion
+
+    margin-top: 0;
+
+    &.slick-initialized {
+        max-height: unset;
+        min-height: $sliderHeightLG;
+        height: $sliderHeightLG;
+
+        @include media_down($md) {
+            min-height: $sliderHeightMD;
+            height: $sliderHeightMD;
+        }
+
+        @include media_down($sm) {
+            min-height: $sliderHeightSM;
+            height: $sliderHeightSM;
+        }
+    }
+
+    .heroCarousel-image-wrapper {
+        max-height: unset;
+        min-height: $sliderHeightLG;
+        height: $sliderHeightLG;
+
+        @include media_down($md) {
+            min-height: $sliderHeightMD;
+            height: $sliderHeightMD;
+        }
+
+        @include media_down($sm) {
+            min-height: $sliderHeightSM;
+            height: $sliderHeightSM;
+        }
+    }
+
+    @if $shouldStretch {
+        .heroCarousel-slide {
+            @extend .stretch;
+        }
+    }
+
+    @if $hidePlayPauseButton {
+        .heroCarousel-play-pause-button {
+            display: none;
+        }
+    }
+
+    @if $hideArrows {
+        .slick-arrow {
+            display: none !important;
+        }
+    }
+
+    @if $hideArrowsOnMobile {
+        @include media_down($sm) {
+            .slick-arrow {
+                display: none !important;
+            }
+        }
+    }
+    .heroCarousel-content {
+        position: absolute;
+        background: $contentBackgroundColor;
+        width: auto;
+        padding: $contentPaddingLG;
+        text-align: right;
+        max-height: unset;
+        max-width: 100%;
+
+        .heroCarousel-title {
+            color: black;
+            @extend .font-Serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: $contentTitleFontSizeLG;
+
+            @include media_down($md) {
+                font-size: $contentTitleFontSizeMD;
+            }
+
+            @include media_down($sm) {
+                font-size: $contentTitleFontSizeSM;
+            }
+        }
+
+        .heroCarousel-description {
+            color: black;
+            font-size: $contentDescriptionFontSizeLG;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 20px;
+
+            @include media_down($md) {
+                font-size: $contentDescriptionFontSizeMD;
+            }
+
+            @include media_down($sm) {
+                font-size: $contentDescriptionFontSizeSM;
+            }
+        }
+
+        .heroCarousel-action {
+            @extend .button-medium;
+            @extend .button-border-black;
+        }
+
+        @include media_down($md) {
+            padding: $contentPaddingMD;
+        }
+
+        @include media_down($sm) {
+            padding: $contentPaddingSM;
+        }
+    }
+
+    .slick-arrow {
+        &::before {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url("../icons/custom/right-arrow.svg");
+        }
+
+        &:hover {
+            background-color: transparent;
+
+            &::before {
+                background-image: url("../icons/custom/right-arrow-red.svg");
+            }
+        }
+
+        &:focus {
+            background-color: transparent;
+        }
+
+        &.slick-next {
+            right: 10px;
+        }
+
+        &.slick-prev {
+            left: 10px;
+            &::before {
+                transform: scaleX(-1);
+            }
+        }
+    }
+
+    .slick-dots {
+        li {
+            background: transparent;
+            padding: 5px 5px;
+
+            width: auto;
+            height: auto;
+
+            button {
+                width: $dotDiameter;
+                height: $dotDiameter;
+
+                &::before {
+                    width: $dotDiameter;
+                    height: $dotDiameter;
+                }
+            }
+
+            &:not(.slick-active) {
+                button {
+                    &::before {
+                        background: white;
+                        opacity: 1;
+                    }
+
+                    &:hover {
+                        &::before {
+                            opacity: 0.8;
+                        }
+                    }
+                }
+            }
+
+            &.slick-active {
+                button {
+                    &::before {
+                        background: $red;
+                    }
+                }
+            }
+        }
+    }
+}

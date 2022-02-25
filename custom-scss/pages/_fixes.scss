@@ -1,0 +1,65 @@
+.header {
+    #menu .navPages-list li a {
+        font-family: $AvenirBold;
+        font-weight: 400;
+    }
+    .navUser {
+        .navUser-section li a, .navUser-or {
+            font-family: $AvenirBold;
+            font-weight: 400;
+        }
+    }
+    .banner a{
+        font-family: $AvenirMed;
+        font-weight: 400;
+        b {
+            font-family: $AvenirBold;
+        }
+    }
+}
+
+
+.homepage {
+    section:nth-of-type(3) {
+        @media (min-width: 800px) {
+            h2 {
+                font-size: 43px;
+            }
+        }
+    }
+    section:nth-of-type(4) .content-title #buttonLink{
+        font-family: $Serif;
+        font-size: 23px;
+        line-height: 26px;
+    }
+    section:nth-of-type(6) #buttonLink{
+        font-family: $AvenirBold;
+        
+    }
+}
+
+.footer {
+    .footer-info-col {
+        .footer-info-heading, #nl_email::placeholder, #country-page {
+            font-family: $AvenirBold;
+        }
+        #nl_email::placeholder {
+            color: #757575;
+        }
+        .submit-and-info p, .footer-info-list a{
+            font-family: $AvenirMed;
+        }
+        
+    }
+    .powered-by {
+        font-family: $AvenirMed;
+    }
+    .footer-bottom-links a{
+        font-family: $AvenirBold;
+        font-size: 12px;
+    }
+    #back-to-top .button span{
+        font-family: $AvenirBold;
+    }
+}
+

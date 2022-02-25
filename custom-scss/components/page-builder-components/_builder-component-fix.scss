@@ -1,0 +1,38 @@
+// Fixing image being smaller than the text box, targeting everything except the elements from the theme editor
+.image-with-text, .image-with-text-overlay {
+  [data-content-region],
+  [data-content-region] *:not([data-overlay-wrapper]):not([data-display-wrapper]) {
+    height: 100% !important;
+  }
+}
+
+.image-with-text,
+.image-with-text-overlay,
+.image-grid {
+  [data-edit-mode],
+  [data-edit-mode] * {
+    margin: unset !important;
+    padding: unset !important;
+    min-width: unset !important;
+    min-height: unset !important;
+    width: unset !important;
+
+    font-size: inherit !important;
+    font-family: inherit !important;
+    line-height: inherit !important;
+    font-weight: inherit !important;
+    text-align: inherit !important;
+    letter-spacing: inherit !important;
+  }
+
+  .section-header {
+    width: 100%;
+    text-align: center;
+  }
+
+  .section-body {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

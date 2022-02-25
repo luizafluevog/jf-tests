@@ -1,0 +1,48 @@
+.price-section {
+    font-weight: bold;
+    color: black;
+    font-family: $SansSerif;
+    letter-spacing: initial;
+    display: flex;
+    align-items: flex-end;
+}
+
+.price {
+    color: $black;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.price-section--saving {
+    display: none;
+}
+
+.previewCartItem-price {
+    font-weight: bold;
+}
+
+.non-sale-price--withoutTax + .price-section--withoutTax {
+    .price {
+        color: $red;
+    }
+
+    .currency-name {
+        color: $red;
+    }
+}
+
+.price-section + .price-section {
+    margin-left: 11px;
+
+    .price {
+        color: $red;
+    }
+
+    .currency-name {
+        color: $red;
+    }
+}
+
+// .productView--product .productView .productView-price .price.price--withoutTax {
+//     color: $red;
+// }
