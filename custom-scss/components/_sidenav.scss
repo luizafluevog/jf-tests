@@ -41,7 +41,6 @@
             line-height: 19px;
             padding: 3px 24px 3px 7px;
             font-weight: 500;
-            font-family: $AvenirMed;
             text-decoration: none;
             margin: 0;
             width: 100%;
@@ -74,6 +73,7 @@
                 }
                 &.visible-on-page {
                     font-weight: bold;
+                    font-family: $AvenirBold;
                 }
             }
         }

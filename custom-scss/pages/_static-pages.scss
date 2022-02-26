@@ -1,5 +1,6 @@
 .static-page {
     .entry-content > h6 {
+        font-family: $AvenirBold;
         text-transform: uppercase;
         font-weight: normal;
         @extend .small;
@@ -140,5 +141,8 @@
             font-weight: 400;
             font-family: $AvenirMed;
         }
+    }
+    a {
+        font-family: $AvenirBold;
     }
 }
