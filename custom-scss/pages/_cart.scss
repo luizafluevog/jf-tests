@@ -29,13 +29,11 @@
         .cart-total-grandTotal {
             font-size: 24px;
             font-weight: bold;
-            letter-spacing: -1px;
             font-family: $AvenirBold;
 
             .price-currency {
                 font-size: 12px;
                 font-weight: normal;
-                letter-spacing: 0.3px;
             }
         }
     }
@@ -243,20 +241,9 @@
         .cart-item-info {
             width: 100px;
 
-            .cart-item-value {
-                font-size: 12px;
-                font-weight: bold;
-                font-family: $SansSerif;
-                letter-spacing: -1px;
-            }
-
             .price-currency {
                 margin-left: 2px;
             }
-        }
-
-        .qty-total .cart-item-value {
-            font-size: 24px;
         }
 
         .qty-total {
